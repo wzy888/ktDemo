@@ -29,7 +29,7 @@ object HttpConfig {
     const val READ_TIMEOUT: Long = 10
     const val WRITE_TIMEOUT: Long = 10
 
-    const val BASE_URL = ""
+    const val BASE_URL = "https://gank.io/api/"
 
 
 }

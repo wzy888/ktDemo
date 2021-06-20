@@ -27,11 +27,14 @@ import android.widget.Toast
  * ━━━━━━━━━━━神兽出没━━━━━━━━━━━━━━
  */
 fun <T> BaseResponse<T>.result(): T? {
-    if (code == "000000") {
-        return data
-    } else {
-        throw CodeException(code, message)
-    }
+
+
+    return data!!;
+//    if (code == "000000") {
+//        return data
+//    } else {
+//        throw CodeException(code, message)
+//    }
 }
 
 fun Activity.showToast(msg: String) {

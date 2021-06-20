@@ -1,9 +1,7 @@
 package com.zhouzi.retrofit.http
 
 import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
+import retrofit2.http.*
 
 /**
  * Created by ZhouZi on 2020/5/27.
@@ -30,8 +28,13 @@ import retrofit2.http.POST
  */
 interface ApiFunction {
 
-    @POST("/te/auth//login")
-    @FormUrlEncoded
-    suspend fun login(@Field("nauth_token") nauthToken: String): BaseResponse<Any>
+//    https://gank.io/api/v2/data/category/Girl/type/Girl/page/1/count/10
+//    https://gank.io/api/v2/data/category/<category>/type/<type>/page/<page>/count/<count>
+
+    @GET("v2/data/category/{category}/type/{type}/page/{page}/count/{count}")
+    suspend fun login(
+        @Path("category") category: String, @Path("type") type: String
+        , @Path("page") page: Int, @Path("count") count: Int
+    ): BaseResponse<Any>
 
 }
